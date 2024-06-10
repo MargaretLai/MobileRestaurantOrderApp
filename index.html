@@ -18,15 +18,17 @@
     <div id="total-section"></div>
     <div id="calculation-section"></div>
 
-    <div class="payment-section">
-        <form>
+    <div class="payment-section" id="payment-section">
+        <form id="payment-form">
             <h3>Enter card details</h3>
-            <input type="text" id="name" placeholder="Enter your name">
-            <input type="text" id="name" placeholder="Enter card number">
-            <input type="text" id="name" placeholder="Enter CVV">
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number">
+            <input type="text" id="cvv" name="cvv" placeholder="Enter CVV">
             <button type="submit" id="submit-payment-btn">Pay</button>
         </form>
     </div>
+
+    <div id="message"></div>
 
     <script src="index.js" type="module"></script>
 </body>

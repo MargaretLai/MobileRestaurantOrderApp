@@ -1,5 +1,6 @@
 import { menuArray } from './data.js'
 
+
 // Render food items
 const mainSection = document.getElementById("main")
 const totalSection = document.getElementById("total-section")
@@ -91,6 +92,21 @@ function renderPrice(orderedArr) {
 
 // Payment
 function handlePayment() {
-    const paymentSection = document.getElementById("payment.section")
+    document.getElementById("payment-section").style.display = "block"
 
+    const form = document.getElementById("payment-form")
+    form.addEventListener("submit", function(e) {
+        e.preventDefault()
+        const formData = new FormData(form)
+        const userName = formData.get("name")
+
+        const endEle = document.getElementById("payment-section")
+        endEle.style.display = "none"
+
+        document.getElementById("total-section").innerHTML = ""
+        document.getElementById("calculation-section").innerHTML = ""
+        const message = document.getElementById("message")
+        message.style.display = "block"
+        message.innerHTML = `<p>Thanks ${userName}, your order is on the way</p>`
+    })
 }

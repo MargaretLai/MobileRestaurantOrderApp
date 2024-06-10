@@ -4,7 +4,7 @@ body {
     width: 700px;
 }
 
-header{
+header {
     margin: 0 auto;
     padding-left: 50px;
     padding-top: 5px;
@@ -63,43 +63,45 @@ hr {
     justify-content: space-between;
 }
 
-.food-name, .food-price {
+.food-name,
+.food-price {
     font-size: 32px;
     font-weight: 0;
 }
 
- .remove-btn {
+.remove-btn {
     border: none;
     background: none;
     color: #BBBBBB;
     cursor: pointer;
- }
+}
 
- #title {
+#title {
     text-align: center;
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 10px;
- }
+}
 
- #total-hr {
+#total-hr {
     color: black;
     background-color: black;
     height: 3px;
     font-weight: 700;
- }
+}
 
- .total-detail {
+.total-detail {
     display: flex;
     justify-content: space-between;
- }
+}
 
- #total-price, #total-title {
+#total-price,
+#total-title {
     font-size: 32px;
     font-weight: 0;
- }
+}
 
- #pay-btn {
+#pay-btn {
     width: 700px;
     padding: 20px 100px;
     border: none;
@@ -107,9 +109,10 @@ hr {
     color: white;
     font-weight: 700;
     font-size: 24px;
- }
+}
 
- .payment-section {
+.payment-section {
+    display: none;
     width: 400px;
     height: 500px;
     box-shadow: 0 0 150px black;
@@ -118,26 +121,26 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
- }
+}
 
- form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
- }
+}
 
- .payment-section h3 {
+.payment-section h3 {
     font-size: 36px;
- }
+}
 
 input {
     padding: 20px;
     width: 280px;
     margin: 10px;
- }
+}
 
- #submit-payment-btn{
+#submit-payment-btn {
     border: none;
     background-color: #16DB99;
     color: white;
@@ -147,6 +150,14 @@ input {
     width: 150px;
     border-radius: 40px;
     margin-top: 5px;
- }
+}
 
-
+#message {
+    display: none;
+    background-color: #ECFDF5;
+    color: #065F46;
+    padding: 10px 60px;
+    font-size: 24px;
+    width: 300px;
+    margin: 20px auto;
+}
