@@ -1,3 +1,19 @@
 body {
     margin: 0;
+    font-family: "Smythe", system-ui;
 }
+
+header{
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-top: 5px;
+    width: 700px;
+    height: 190px;
+    background-image: url(hamberger.jpg);
+    color: #FFFFFF;
+}
+
+header h1 {
+    font-weight: 900
+}
+
