@@ -108,3 +108,45 @@ hr {
     font-weight: 700;
     font-size: 24px;
  }
+
+ .payment-section {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 0 150px black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+ }
+
+ form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .payment-section h3 {
+    font-size: 36px;
+ }
+
+input {
+    padding: 20px;
+    width: 280px;
+    margin: 10px;
+ }
+
+ #submit-payment-btn{
+    border: none;
+    background-color: #16DB99;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 40px;
+    margin-top: 5px;
+ }
+
+

@@ -44,7 +44,8 @@ function removeItem(orderedArr, index) {
 function renderTotalSection(orderedArr) {
     if (orderedArr.length != 0) {
         totalSection.innerHTML = '<h3 id="title">Your order</h3>'
-        totalSection.innerHTML += orderedArr.map((food, index) => {return `
+        totalSection.innerHTML += orderedArr.map((food, index) => {
+            return `
         <div class="order-detail">
             <div class="food" id="${food.id}">
                 <h3 class="food-name">${food.name} <button class="remove-btn" data-remove="${index}">remove</button></h3>
@@ -52,7 +53,7 @@ function renderTotalSection(orderedArr) {
             </div>
         </div>
         `}).join('')
-    
+
         renderPrice(orderedArr)
     }
     else {
@@ -67,7 +68,7 @@ function renderPrice(orderedArr) {
     if (orderedArr != 0) {
         let totalPrice = 0
         orderedArr.forEach(item => totalPrice += item.price)
-    
+
         section.innerHTML = `<hr id="total-hr">
     
         <div class="total-detail">
@@ -77,6 +78,10 @@ function renderPrice(orderedArr) {
     
         <button id="pay-btn">Complete order</button>
         `
+
+        //Calculation for payment
+        const completeOrderBtn = document.getElementById("pay-btn")
+        completeOrderBtn.addEventListener("click", handlePayment)
     }
     else {
         section.innerHTML = ""
@@ -84,10 +89,8 @@ function renderPrice(orderedArr) {
 
 }
 
-//Calculation
-const completeOrderBtn = document.getElementById("pay-btn")
-completeOrderBtn.addEventListener("clicked", handlePayment())
-
+// Payment
 function handlePayment() {
-    
+    const paymentSection = document.getElementById("payment.section")
+
 }
