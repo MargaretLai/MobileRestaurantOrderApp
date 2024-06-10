@@ -1,14 +1,14 @@
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family: "Smythe", system-ui;
+    width: 700px;
 }
 
 header{
     margin: 0 auto;
     padding-left: 50px;
     padding-top: 5px;
-    width: 700px;
-    height: 190px;
+    height: 150px;
     background-image: url(hamberger.jpg);
     color: #FFFFFF;
 }
@@ -17,3 +17,43 @@ header h1 {
     font-weight: 900
 }
 
+.item {
+    margin-top: 40px;
+}
+
+.item-emoji {
+    font-size: 72px;
+    margin: 12px 20px;
+}
+
+.item-name {
+    font-size: 32px;
+    margin: 0;
+}
+
+.item-ingredients {
+    color: #8B8B8B;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.item-price {
+    font-size: 24px;
+    margin: 0;
+}
+
+.item-emoji {
+    float: inline-start;
+    padding-right: 10px;
+}
+
+i {
+    float: inline-end;
+    font-size: 40px;
+    margin-right: 50px;
+}
+
+hr {
+    color: #D2D2D2;
+    margin-top: 50px;
+}
