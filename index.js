@@ -5,7 +5,7 @@ const mainSection = document.getElementById("main")
 const totalSection = document.getElementById("total-section")
 
 const mainHTML = menuArray.map(item => {
-    const {name, ingredients, id, price, emoji} = item
+    const { name, ingredients, id, price, emoji } = item
 
     return `
     <div class="item">
@@ -21,32 +21,73 @@ const mainHTML = menuArray.map(item => {
 
 mainSection.innerHTML = mainHTML
 
-// Total
-document.addEventListener("click", function(e) {
+
+
+// Order display + Total display
+const ordered = []
+document.addEventListener("click", function (e) {
     if (e.target.dataset.id) {
-        renderTotalSection()
+        ordered.push(menuArray.filter(food => food.id == e.target.dataset.id)[0])
+        renderTotalSection(ordered)
+    }
+
+    if (e.target.dataset.remove) {
+        removeItem(ordered, parseInt(e.target.dataset.remove))
     }
 })
 
-function renderTotalSection() {
-    totalSection.innerHTML =   `
-    <h3 id="title">Your order</h3>
-    <div class="order-detail">
-        <div class="food">
-            <h3 class="food-name">Pizza <button class="remove-btn">remove</button></h3>
-            <h3 class="food-price">$14</h3>
+function removeItem(orderedArr, index) {
+    orderedArr.splice(index, 1)
+    renderTotalSection(orderedArr)
+}
+
+function renderTotalSection(orderedArr) {
+    if (orderedArr.length != 0) {
+        totalSection.innerHTML = '<h3 id="title">Your order</h3>'
+        totalSection.innerHTML += orderedArr.map((food, index) => {return `
+        <div class="order-detail">
+            <div class="food" id="${food.id}">
+                <h3 class="food-name">${food.name} <button class="remove-btn" data-remove="${index}">remove</button></h3>
+                <h3 class="food-price">${food.price}</h3>
+            </div>
         </div>
-    </div>
+        `}).join('')
+    
+        renderPrice(orderedArr)
+    }
+    else {
+        totalSection.innerHTML = ''
+        renderPrice(orderedArr)
+    }
+}
 
-    <div class="total">
-        <hr id="total-hr">
+function renderPrice(orderedArr) {
+    const section = document.getElementById("calculation-section")
 
+    if (orderedArr != 0) {
+        let totalPrice = 0
+        orderedArr.forEach(item => totalPrice += item.price)
+    
+        section.innerHTML = `<hr id="total-hr">
+    
         <div class="total-detail">
             <h3 id="total-title">Total price: </h3>
-            <h3 id="total-price">$23</h3>
+            <h3 id="total-price">${totalPrice}</h3>
         </div>
-
+    
         <button id="pay-btn">Complete order</button>
-    </div>
-    `
+        `
+    }
+    else {
+        section.innerHTML = ""
+    }
+
+}
+
+//Calculation
+const completeOrderBtn = document.getElementById("pay-btn")
+completeOrderBtn.addEventListener("clicked", handlePayment())
+
+function handlePayment() {
+    
 }
