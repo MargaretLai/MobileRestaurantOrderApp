@@ -1,5 +1,6 @@
 import { menuArray } from './data.js'
 
+// Render food items
 const mainSection = document.getElementById("main")
 
 const mainHTML = menuArray.map(item => {
@@ -19,4 +20,4 @@ const mainHTML = menuArray.map(item => {
 
 mainSection.innerHTML = mainHTML
 
-console.log("run!")
+// Calculation
